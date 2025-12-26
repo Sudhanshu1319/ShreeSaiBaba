@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getBookingsByEmail, getPrasadByEmail } from '../services/api';
 import { Calendar, Clock, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 
 const MyBookings = () => {
@@ -20,12 +20,12 @@ const MyBookings = () => {
 
     try {
       const [bookingsRes, prasadRes] = await Promise.all([
-        axios.get(`/api/bookings/${email}`),
-        axios.get(`/api/prasad/${email}`)
+        getBookingsByEmail(email),
+        getPrasadByEmail(email)
       ]);
 
-      setBookings(bookingsRes.data.bookings || []);
-      setPrasadBookings(prasadRes.data.prasadBookings || []);
+      setBookings(bookingsRes.bookings || []);
+      setPrasadBookings(prasadRes.prasadBookings || []);
     } catch (err) {
       setError('Error fetching bookings. Please try again.');
       console.error(err);
