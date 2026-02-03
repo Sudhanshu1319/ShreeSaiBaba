@@ -88,15 +88,15 @@ const Navbar = () => {
       {/* Main Header with Logo and Title */}
       <div className="container-custom px-4 py-3">
         <div className="bg-white rounded-full shadow-lg px-6 py-3 flex items-center justify-between">
-          {/* Logo and Title */}
-          <div className="flex items-center gap-3">
+          {/* Logo and Title - Clickable to Home */}
+          <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity flex-1 min-w-0">
             {/* Circular Logo with Sai Baba Image */}
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-orange-600 flex items-center justify-center shadow-lg p-1">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-orange-600 flex items-center justify-center shadow-lg p-1 flex-shrink-0">
               <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
                 <img
                   src="/images/images.jpg"
                   alt="Sai Baba Logo"
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover rounded-full pointer-events-none"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextElementSibling.style.display = 'flex';
@@ -105,17 +105,17 @@ const Navbar = () => {
                 <div className="hidden text-orange-600 text-3xl font-bold">ॐ</div>
               </div>
             </div>
-            <div>
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
+            <div className="min-w-0">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 truncate">
                 The Shirdi Sai Mandir And Cultural Centre
               </h1>
             </div>
-          </div>
+          </Link>
 
           {/* Live Darshan Button */}
           <Link
             to="/live-darshan"
-            className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-colors hidden md:block shadow-md"
+            className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-colors hidden md:block shadow-md flex-shrink-0 ml-4"
           >
             Live Darshan
           </Link>

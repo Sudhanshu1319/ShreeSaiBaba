@@ -1,4 +1,10 @@
+import { useState } from 'react';
+
 const LiveDarshan = () => {
+  const [isLive, setIsLive] = useState(false);
+  // Replace with your actual YouTube live stream ID when available
+  const youtubeStreamId = 'YOUR_YOUTUBE_STREAM_ID';
+
   return (
     <div>
       {/* Hero */}
@@ -6,6 +12,15 @@ const LiveDarshan = () => {
         <div className="container-custom px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Live Darshan</h1>
           <p className="text-xl">Experience Baba's divine presence from anywhere</p>
+          {isLive && (
+            <div className="mt-4 inline-flex items-center gap-2 bg-red-600 px-4 py-2 rounded-full">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+              </span>
+              <span className="font-semibold">LIVE NOW</span>
+            </div>
+          )}
         </div>
       </section>
 
@@ -13,17 +28,26 @@ const LiveDarshan = () => {
       <section className="section-padding bg-white">
         <div className="container-custom px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl aspect-video">
-              {/* Replace with actual live stream embed */}
-              <div className="w-full h-full flex items-center justify-center text-white">
+            <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl aspect-video relative">
+              {/* YouTube Embed - Replace YOUR_YOUTUBE_STREAM_ID with actual ID */}
+              <iframe
+                className="w-full h-full absolute inset-0"
+                src={`https://www.youtube.com/embed/${youtubeStreamId}?autoplay=0&rel=0&modestbranding=1`}
+                title="Live Darshan Stream"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              {/* Fallback when stream is not available */}
+              <div className="w-full h-full flex items-center justify-center text-white absolute inset-0 bg-gray-900" style={{display: youtubeStreamId === 'YOUR_YOUTUBE_STREAM_ID' ? 'flex' : 'none'}}>
                 <div className="text-center">
                   <div className="w-20 h-20 mx-auto mb-4 bg-orange-600 rounded-full flex items-center justify-center">
                     <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
                     </svg>
                   </div>
-                  <p className="text-xl font-semibold">Live Darshan Stream</p>
-                  <p className="text-gray-400 mt-2">Coming Soon</p>
+                  <p className="text-xl font-semibold">Live Darshan Loading...</p>
+                  <p className="text-gray-400 mt-2">Please check back during temple hours</p>
                 </div>
               </div>
             </div>

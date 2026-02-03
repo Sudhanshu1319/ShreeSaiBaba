@@ -1,4 +1,5 @@
-import { Flower, Calendar, Phone, Mail } from 'lucide-react';
+import { Flower } from 'lucide-react';
+import BookingForm from '../components/BookingForm';
 
 const Garlands = () => {
   return (
@@ -16,38 +17,34 @@ const Garlands = () => {
             <div className="text-center mb-8">
               <Flower className="w-16 h-16 text-orange-600 mx-auto mb-4" />
             </div>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Devotees can book garlands to offer to Baba on special occasions, birthdays, anniversaries, 
+            <p className="text-lg text-gray-700 leading-relaxed mb-6 text-center">
+              Devotees can book garlands to offer to Baba on special occasions, birthdays, anniversaries,
               or to express gratitude. Fresh flowers are arranged daily and offered to Baba with devotion.
             </p>
 
-            <div className="bg-orange-50 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Booking Information</h2>
-              <ul className="space-y-2 text-gray-700">
-                <li>• Garlands can be booked in advance for special occasions</li>
-                <li>• Fresh flowers are arranged daily</li>
-                <li>• Available for booking throughout the year</li>
-                <li>• Contact the temple for pricing and availability</li>
-              </ul>
-            </div>
-
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Book a Garland</h2>
-              <p className="text-gray-700 mb-6">
-                To book a garland, please contact us using the information below or visit the temple 
-                during operating hours.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <a href="tel:6474444724" className="btn-primary inline-flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  Call 647-444-4724
-                </a>
-                <a href="mailto:info@theshirdisaimandir.ca" className="btn-secondary inline-flex items-center gap-2">
-                  <Mail className="w-5 h-5" />
-                  Email Us
-                </a>
+            <div className="bg-orange-50 rounded-lg p-6 mb-12">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Garland Offerings</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-2">Fresh Flower Garlands</h3>
+                  <ul className="space-y-1 text-gray-700 text-sm">
+                    <li>• Roses, Marigolds, Jasmine</li>
+                    <li>• Offered during morning Aarti</li>
+                    <li>• Blessed by priests</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-2">Special Occasions</h3>
+                  <ul className="space-y-1 text-gray-700 text-sm">
+                    <li>• Birthdays & Anniversaries</li>
+                    <li>• Festivals & Celebrations</li>
+                    <li>• Gratitude Offerings</li>
+                  </ul>
+                </div>
               </div>
             </div>
+
+            <BookingForm serviceType="garlands" serviceName="Garland Offering" />
           </div>
         </div>
       </section>

@@ -9,14 +9,14 @@ const Footer = () => {
           {/* About Us Section */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-white border-b border-white pb-2">About Us</h3>
-            <p className="text-gray-300 text-sm mb-4">
+            <p className="text-gray-300 text-sm mb-4 leading-relaxed">
               The Shirdi Sai Mandir, the Shirdi of North America, is conveniently located at 2721 Markham Road in Toronto, ON just north of Finch Road and Markham Road. Baba's Mandir is spread across 4 units (6,7, 8 and 9) with a total area of approximately 8,000 square feet.
             </p>
             {/* Flower Tray Image */}
             <div className="mt-4">
-              <div className="w-32 h-32 bg-gray-700 rounded flex items-center justify-center">
-                <img 
-                  src="/images/flower-tray.jpg" 
+              <div className="w-32 h-32 bg-gray-700 rounded flex items-center justify-center overflow-hidden">
+                <img
+                  src="/images/flower-tray.jpg"
                   alt="Flower tray offering"
                   className="w-full h-full object-cover rounded"
                   onError={(e) => {
